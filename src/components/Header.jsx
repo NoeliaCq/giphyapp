@@ -6,7 +6,7 @@ const Header = () => {
         <nav className="navbar bg-dark navbar-dark">
             <div className="container">
                 <a href="/" className="navbar-brand">
-                    <img src={giphylogo} alt="" width="40" height="40"></img>
+                    <img className="rounded-circle" src={giphylogo} alt="" width="40" height="40"></img>
                     Mi buscador de GIFS
                 </a>
             </div>

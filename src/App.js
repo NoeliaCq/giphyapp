@@ -2,13 +2,15 @@ import { Fragment, useState } from 'react';
 import './App.css';
 import Gif from './components/Gif';
 import Header from './components/Header';
+import Footer from './components/Footer';
+import TrendingGifs from './components/TrendingGifs';
 
 //API KEY: 7YoMbMhW5BJGREy7ucWELkRFmmH2czi8
 function App() {
   //creamos un state para los gifs
   const [gif, setGif] = useState({});
   //URl de la API con resultados random
-  const apiRandomURL = 'https://api.giphy.com/v1/gifs/random?api_key=7YoMbMhW5BJGREy7ucWELkRFmmH2czi8&tag=&rating=g';
+  const apiRandomURL = 'https://api.giphy.com/v1/gifs/random?api_key=7YoMbMhW5BJGREy7ucWELkRFmmH2czi8&tag=&rating=pg-13';
   //consultamos la API y obtenemos el resultado
   const getGif = async () => {
     try {
@@ -24,13 +26,13 @@ function App() {
     <Fragment>
         <Header />
         <div
-          className="d-flex justify-content-center align-items-center box-height-static">
-          <div className="card" style={{ width: "18rem" }}>
+          className="container d-flex flex-wrap justify-content-center align-items-center">
+          <div className="card" style={{width:'18rem'}}>
             <div className="card-body d-flex flex-column align-items-center justify-content-between">
-              <h5 className="card-title">Buscador de Gifs</h5>
+              <h5 className="card-title">Gif sorpresa</h5>
               <p className="card-text">Buscá un GIF aleatorio con un solo click!</p>
               <button
-                className="btn btn-outline-dark"
+                className="btn btn-outline-light gradient"
                 onClick={getGif}>
                 Random Gif
               </button>
@@ -38,6 +40,8 @@ function App() {
             </div>
           </div>
         </div>
+        <TrendingGifs />
+        <Footer />
     </Fragment>
   );
 }

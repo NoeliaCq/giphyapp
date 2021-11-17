@@ -3,7 +3,7 @@ const Gif = ({gifProp}) => {
     return (
         <div>
             <img src={gifProp[0]} className="card-img-top" alt=""></img>
-            <h3>{gifProp[1]}</h3>
+            <p>{gifProp[1]}</p>
         </div>
       );
 }
